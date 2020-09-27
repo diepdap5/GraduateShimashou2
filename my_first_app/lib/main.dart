@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
     }
 
     Widget textSection = Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(8),
       child: Text(
         'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
         'Alps. Situated 1,578 meters above sea level, it is one of the '
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         'half-hour walk through pastures and pine forest, leads you to the '
         'lake, which warms to 20 degrees Celsius in the summer. Activities '
         'enjoyed here include rowing, and riding the summer toboggan run.',
-        // softWrap: true,
+        softWrap: true,
       ),
     );
 
@@ -72,11 +72,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          Text('5'),
+          FavoriteWidget(),
         ],
       ),
     );
@@ -114,4 +110,50 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            padding: EdgeInsets.all(0),
+            alignment: Alignment.centerRight,
+            icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
+            color: Colors.orange[500],
+            onPressed: _toggleFavorite,
+          ),
+        ),
+        SizedBox(
+          width: 18,
+          child: Container(
+            child: Text('$_favoriteCount'),
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _toggleFavorite() {
+    setState(() {
+      if (_isFavorited) {
+        _favoriteCount -= 1;
+        _isFavorited = false;
+      } else {
+        _favoriteCount += 1;
+        _isFavorited = true;
+      }
+    });
+  }
+}
+
+class FavoriteWidget extends StatefulWidget {
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
