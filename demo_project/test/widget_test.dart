@@ -8,12 +8,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:widget_management/main.dart';
+import 'package:demo_project/main.dart';
+import 'package:demo_project/widget_management/tapboxA.dart';
+import 'package:demo_project/widget_management/tapboxB.dart';
+import 'package:demo_project/widget_management/tapboxC.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(MyAppC());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

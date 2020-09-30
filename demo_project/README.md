@@ -1,4 +1,4 @@
-# widget_management
+# demo_project
 
 A new Flutter project.
 
