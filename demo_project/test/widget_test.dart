@@ -12,11 +12,14 @@ import 'package:demo_project/main.dart';
 import 'package:demo_project/widget_management/tapboxA.dart';
 import 'package:demo_project/widget_management/tapboxB.dart';
 import 'package:demo_project/widget_management/tapboxC.dart';
+// import 'package:demo_project/animation/animated_widget.dart';
+// import 'package:demo_project/animation/animated_builder.dart';
+import 'package:demo_project/animation/animated_simutaneous.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyAppC());
+    await tester.pumpWidget(LogoApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
