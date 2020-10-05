@@ -15,11 +15,12 @@ import 'package:demo_project/widget_management/tapboxC.dart';
 // import 'package:demo_project/animation/animated_widget.dart';
 // import 'package:demo_project/animation/animated_builder.dart';
 import 'package:demo_project/animation/animated_simutaneous.dart';
+import 'package:demo_project/internationalization/basic_example.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(LogoApp());
+    await tester.pumpWidget(Demo());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
