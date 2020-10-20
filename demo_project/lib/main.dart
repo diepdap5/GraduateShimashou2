@@ -7,10 +7,11 @@ import 'animation/animated_builder.dart';
 // import 'animation/animated_simutaneous.dart';
 import 'internationalization/basic_example.dart';
 import 'image_adjust/image_adjust.dart';
+import 'image_adjust/fading.dart';
 
 void main() {
   // runApp(MyAppA());
   // runApp(MyAppB());
   // runApp(Demo());
-  runApp(MyApp_Image());
+  runApp(MyApp_Cached_Image());
 }
