@@ -8,12 +8,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:my_first_app/main.dart';
+import 'package:my_first_app/first_app/first_app.dart';
+import 'package:my_first_app/navigation/nav_basic.dart';
+import 'package:my_first_app/navigation/route.dart';
+import 'package:my_first_app/navigation/named_route.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(NamedRouteApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
