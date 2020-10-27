@@ -12,11 +12,14 @@ import 'package:my_first_app/first_app/first_app.dart';
 import 'package:my_first_app/navigation/nav_basic.dart';
 import 'package:my_first_app/navigation/route.dart';
 import 'package:my_first_app/navigation/named_route.dart';
+import 'package:my_first_app/navigation/pass_args.dart';
+import 'package:my_first_app/navigation/return_data.dart';
+import 'package:my_first_app/navigation/send_data.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(NamedRouteApp());
+    await tester.pumpWidget(SendDataApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

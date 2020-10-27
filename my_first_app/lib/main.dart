@@ -7,5 +7,8 @@ import 'first_app/first_app.dart';
 import 'navigation/nav_basic.dart';
 import 'navigation/route.dart';
 import 'navigation/named_route.dart';
+import 'navigation/pass_args.dart';
+import 'navigation/return_data.dart';
+import 'navigation/send_data.dart';
 
-void main() => runApp(NamedRouteApp());
+void main() => runApp(SendDataApp());
