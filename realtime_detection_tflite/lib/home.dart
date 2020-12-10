@@ -81,21 +81,21 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   RaisedButton(
-                    child: const Text(ssd),
+                    child: const Text("Start"),
                     onPressed: () => onSelect(ssd),
                   ),
-                  RaisedButton(
-                    child: const Text(yolo),
-                    onPressed: () => onSelect(yolo),
-                  ),
-                  RaisedButton(
-                    child: const Text(mobilenet),
-                    onPressed: () => onSelect(mobilenet),
-                  ),
-                  RaisedButton(
-                    child: const Text(posenet),
-                    onPressed: () => onSelect(posenet),
-                  ),
+                  // RaisedButton(
+                  //   child: const Text(yolo),
+                  //   onPressed: () => onSelect(yolo),
+                  // ),
+                  // RaisedButton(
+                  //   child: const Text(mobilenet),
+                  //   onPressed: () => onSelect(mobilenet),
+                  // ),
+                  // RaisedButton(
+                  //   child: const Text(posenet),
+                  //   onPressed: () => onSelect(posenet),
+                  // ),
                 ],
               ),
             )
