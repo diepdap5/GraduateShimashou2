@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
-import 'dart:math' as math;
 
 import 'cameratwo.dart';
-// import 'bndbox.dart';
 import 'models.dart';
 import 'recognition.dart';
 
@@ -33,7 +31,6 @@ class _HomePageState extends State<HomePage> {
     res = await Tflite.loadModel(
         model: "assets/model_dantochoc.tflite",
         labels: "assets/model_dantochoc.txt");
-    print(res);
   }
 
   onSelect(model) {
@@ -77,22 +74,29 @@ class _HomePageState extends State<HomePage> {
                     setRecognitions,
                   ),
                 ),
-
-                // BndBox(
-                //     _recognitions == null ? [] : _recognitions,
-                //     math.max(_imageHeight, _imageWidth),
-                //     math.min(_imageHeight, _imageWidth),
-                //     screen.height,
-                //     screen.width,
-                //     _model),
                 Expanded(
                   flex: 1, // 20%
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     color: Colors.pink[200],
-                    child: Text('Recognition'),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Recognition',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black.withOpacity(0.8),
+                              fontSize: 20),
+                        ),
+                        Recognition(
+                          _recognitions == null ? [] : _recognitions,
+                        )
+                      ],
+                    ),
                   ),
-                )
+                ),
+
                 // )
               ],
             ),

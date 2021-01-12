@@ -53,10 +53,10 @@ class _CameraState extends State<Camera> {
               imageMean: 127.5,
               imageStd: 127.5,
               numResults: 4,
-              threshold: 0.4,
+              threshold: 0.2,
             ).then((recognitions) {
               int endTime = new DateTime.now().millisecondsSinceEpoch;
-              print("Classification took ${endTime - startTime}");
+              // print("Classification took ${endTime - startTime}");
               print(recognitions);
               widget.setRecognitions(recognitions, img.height, img.width);
 
