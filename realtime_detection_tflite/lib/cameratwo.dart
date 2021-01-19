@@ -3,8 +3,6 @@ import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:math' as math;
 
-import 'models.dart';
-
 typedef void Callback(List<dynamic> list, int h, int w);
 
 class Camera extends StatefulWidget {
@@ -43,7 +41,6 @@ class _CameraState extends State<Camera> {
           if (!isDetecting) {
             isDetecting = true;
 
-            int startTime = new DateTime.now().millisecondsSinceEpoch;
             Tflite.runModelOnFrame(
               bytesList: img.planes.map((plane) {
                 return plane.bytes;
@@ -55,11 +52,8 @@ class _CameraState extends State<Camera> {
               numResults: 4,
               threshold: 0.2,
             ).then((recognitions) {
-              int endTime = new DateTime.now().millisecondsSinceEpoch;
-              // print("Classification took ${endTime - startTime}");
               print(recognitions);
               widget.setRecognitions(recognitions, img.height, img.width);
-
               isDetecting = false;
             });
           }

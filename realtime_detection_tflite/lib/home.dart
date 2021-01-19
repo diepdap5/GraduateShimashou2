@@ -3,7 +3,6 @@ import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 
 import 'cameratwo.dart';
-import 'models.dart';
 import 'recognition.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,8 +16,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<dynamic> _recognitions;
-  int _imageHeight = 0;
-  int _imageWidth = 0;
   String _model = "";
 
   @override
@@ -27,8 +24,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadModel() async {
-    String res;
-    res = await Tflite.loadModel(
+    await Tflite.loadModel(
         model: "assets/model_dantochoc.tflite",
         labels: "assets/model_dantochoc.txt");
   }
@@ -43,14 +39,11 @@ class _HomePageState extends State<HomePage> {
   setRecognitions(recognitions, imageHeight, imageWidth) {
     setState(() {
       _recognitions = recognitions;
-      _imageHeight = imageHeight;
-      _imageWidth = imageWidth;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    Size screen = MediaQuery.of(context).size;
     return Scaffold(
       body: _model == ""
           ? Center(
@@ -59,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   RaisedButton(
                     child: const Text("Start"),
-                    onPressed: () => onSelect(ssd),
+                    onPressed: () => onSelect("SSD MobileNet"),
                   ),
                 ],
               ),
